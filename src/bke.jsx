@@ -1,30 +1,40 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import BarButton from './functionBars/barButton';
+import './bke.css';
 
-class App extends Component {
-
-    componentDidMount() {
-        this.refs.editor.addEventListener("keydown", (e) => {
-            if (e.keyCode === 13) {
-                // document.execCommand('insertHTML', false, '=');
-                return false;
-            }
-        })
-    }
-
+class BKE extends Component {
     render() {
         return (
-            <div style={{ width: "100%", height: "100%" }}>
+            <div style={{
+                width: "90%",
+                margin: "auto",
+                border: "5px solid #ffaf53",
+                padding: "10px"
+            }}>
                 <div>
-                    <button>B</button><button>I</button><button>U</button><button onClick={() => console.log(this.refs.editor.innerHTML)}>M</button>
+                    <BarButton icon="bold" onClick={() => { console.log("b") }} />
                 </div>
+                <hr />
                 <div
                     ref="editor"
-                    onKeyUp={() => { console.log('test'); return false }}
                     contentEditable="true"
-                    style={{ width: "100%", height: "100%", border: "2px solid black" }} />
+                    style={{
+                        height: this.props.height,
+                        overflow: "auto",
+                        padding: "5px"
+                    }} />
             </div>
         );
     }
 }
 
-export default App;
+BKE.propTypes = {
+    height: PropTypes.string
+};
+
+BKE.defaultProps = {
+    height: "100%"
+}
+
+export default BKE;
