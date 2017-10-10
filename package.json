@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/adogio/BarkEditor/issues"
   },
-  "homepage": "https://github.com/adogio/BarkEditor#readme"
+  "homepage": "https://github.com/adogio/BarkEditor#readme",
+  "dependencies": {}
 }

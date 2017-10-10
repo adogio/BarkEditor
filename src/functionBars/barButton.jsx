@@ -5,7 +5,7 @@ class BarButton extends Component {
     render() {
         return (
             <button
-                style={{ border: "0px", width: "40px", height: "40px" }}
+                style={{ border: "0px", width: "40px", height: "40px", cursor: "pointer" }}
                 onClick={this.props.onClick}>
                 <i className={"fa fa-" + this.props.icon} />
             </button>
